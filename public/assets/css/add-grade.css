@@ -1,0 +1,149 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body{
+  background-color: #f5f7fb;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--text-dark);
+  min-height: 100vh;
+}
+
+.portal-container{
+  max-width: 500px;
+  margin: 48px auto;
+  padding: 0 24px;
+  width: 100%;
+}
+.form-card{
+  background: #fff;
+  border: 1px solid #dfe8ff;
+  border-radius: 14px;
+  padding: 32px;
+  box-shadow: 0 2px 12px rgba(90,50,20,0.08);
+  border-top: 8px solid #4673e5;
+}
+.form-card h2{
+  font-size: 1.2rem;
+  color: #312e81;
+  margin-bottom: 24px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #312e81;
+}
+.form-group{
+  margin-bottom: 18px;
+}
+.form-group label{
+  display: block;
+  font-size: 0.85rem;
+  color:#3e3aa1;
+  margin-bottom:6px;
+  font-weight: 500;
+}
+.form-group input{
+  width: 100%;
+  padding: 10px 14px;
+  border: 2px solid #dbdfeb;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  /* color: #3d2b1f; */
+  /* background: #dfe8ff; */
+  transition: border 0.15s;
+  outline: none;
+}
+
+.form-group input[readonly]{
+  background-color: #e9eeff;
+  color: #193999;
+  cursor: not-allowed;
+}
+.form-group input[name="grade"]{
+  font-size: 1.3rem;
+  font-weight: 600;
+  text-align: center;
+  color: #3532a0;
+  /* background-color: #e6e5ff; */
+  border: 2px solid #dbdfeb;
+  padding: 14px;
+}
+.form-group input[name='grade']::placeholder{
+  color: #3532a0;
+
+}
+.form-group input[name='grade']:focus{
+  border-color: #3532a0;
+  background: #f5f7fc;
+}
+.form-buttons{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 40px;
+}
+.btn-save{
+  padding: 8px 16px;
+  background-color: #d8e3ff;
+  color: #3532a0;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 8px;
+  transition: background 0.15s;
+}
+.btn-save:hover{
+  background-color: #cdd8f4;
+}
+.back-btn{
+  padding: 5px 16px;
+  border: 1px solid #3532a0;
+  border-radius: 8px;
+  color:#3532a0;
+  text-decoration: none;
+}
+.back-btn:hover{
+  background: #f1f5ff;
+}
+.back-btn img{
+  width: 25px;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+/* .back-link{
+  display: inline-block;
+  align-items: center;
+  gap:6px;
+  color: #7a6352;
+  text-decoration: none;
+  font-size: 0.9rem;
+  margin-bottom: 20px;
+  transform: color 0.15s;
+}
+.back-link:hover{
+  color: #b5651d;
+}
+.back-link::before{
+  content: "<-";
+} */
+.error-msg{
+  background-color: #fee2ef;
+  color:#b91c1c;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 0.88rem;
+  margin-bottom: 16px;
+  border: 1px solid #fecaca;
+}
+@media (max-width:600px) {
+  .portal-container{
+    margin: 24px auto;
+    padding: 0 16px;
+  }
+  .form-card{
+    padding: 24px 20px;
+  }
+  
+}

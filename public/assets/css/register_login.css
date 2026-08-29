@@ -1,0 +1,99 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+}
+.login-container{
+  width: 25%;
+  margin: 50px auto;
+  background: #fff;
+  padding: 20px 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+h2{
+  color: #1ba0b7;
+  /* font-size: 1.2rem; */
+  margin:15px 0;
+  text-align: center;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+  border:1px solid #ccc;
+}
+select{
+  width: 60%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+  border:1px solid #ccc;
+}
+
+button {
+  display: block;
+  width: fit-content;
+  margin-top:15px;
+  padding: 8px 15px;
+  border: none;
+  background-color: #1ba0b7;
+  color:white;
+  font-weight: bold;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+button:hover {
+  background-color: #0f798b;
+}
+
+a {
+  text-decoration: none;
+  color: #007bff;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+.dash-link{
+  color: #fff;
+}
+
+.success-msg{
+  color:rgb(26, 148, 87);
+  font-size: 14px;
+  margin: 10px 0;
+}
+.error-msg{
+  color: rgb(241, 33, 33);
+  font-size: 14px;
+  margin: 10px 0;
+}
+
+.back-link{
+  display: inline-flex;
+  padding: 10px;
+  align-items: center;
+  gap: 6px;
+  color: rgb(60, 125, 216);
+  text-decoration: none;
+  font-size: 0.9rem; 
+  margin-top: 20px;
+  transform: color 0.15s; 
+  }
+.back-link:hover{
+  color: rgb(41, 98, 179);
+}
+.back-link::before{
+  content: '<-';
+} 

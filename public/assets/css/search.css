@@ -1,0 +1,61 @@
+.title-img{
+  width:45px;
+  vertical-align: middle;
+  margin-right: 15px;
+}
+.search-title span{
+  color:#24c695;
+}
+.results-container{
+  padding: 15px 20px;
+  border-radius: 12px;
+  border: 2px solid #e3e8ec;
+  display: flex;
+  flex-direction: column;
+  gap:40px
+}
+.results-icons{
+  margin-right: 20px;
+  vertical-align: middle;
+  width:60px
+}
+.result{
+  display: flex;
+  align-items: center;
+}
+.results-links{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  padding: 20px 0;
+}
+.link{
+  padding: 6px 16px;
+  margin-right: 10px;
+  border-radius: 12px;
+  flex-wrap: nowrap;
+
+  /* transition: 0.32s; */         
+}
+.link:hover{
+  transform: translateY(-2px);
+}
+.student-link{
+  background: #dbfcf1;
+  color:#1eab80;
+}
+.teacher-link{
+  background: #e7f1fe;
+  color:#2070b5;
+}
+.course-link{
+  background: #f8f0ff;
+  color:#6820b5;
+}
+.teachers-results{
+  border-top: 2px solid #e3e8ec; 
+}
+.course-results{
+    border-top: 2px solid #e3e8ec; 
+}

@@ -1,0 +1,137 @@
+.course-cards{
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  margin-bottom: 25px;
+}
+.card{
+  flex: 1;
+  display: flex;
+  gap:35px;
+  align-items: center;
+}
+.card-group p{
+  color:#586f9b;
+  font-weight: 500;
+  padding: 5px 0;
+}
+.card-group span{
+  font-size: 1.75rem;
+  font-weight: 600;
+  color:#44587d;
+}
+.students-card{
+  border-top: 8px solid #178ba5;
+}
+.teacher-card{
+  border-top: 8px solid #5180bd;
+}
+.duration-card{
+  border-top: 8px solid #f59e0b;
+}
+.status-card{
+  border-top: 8px solid #b1a2fb;
+}
+.status{
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 20px !important;
+  font-weight: 600 !important;
+}
+.status.Active{
+  color:#16a34a !important;
+  background: #dcfce7;
+}
+.status.Upcoming{
+  color: #d97706;
+  background: #fef3c7;
+}
+.status.Completed{
+  color:#dc2626;
+  background: #fee2e2;
+}
+
+
+
+
+
+
+.course-information{
+  background: #fff;
+  padding: 10px 16px;
+  border-radius: 14px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+h2{
+  color:#178ba5;
+  border-left:4px solid #178ba5;
+  padding: 0 10px;
+}
+/* .course-information h2{
+  color:#178ba5;
+  border-left:4px solid #178ba5;
+  padding: 0 10px;
+} */
+.info-group{
+  padding: 10px 10px;
+  border-top:  2px solid #dee1e7;;
+  display: flex;
+  gap:20px;
+}
+.info-group div{
+  flex:1;
+  padding: 10px 10px;
+}
+.info{
+  border-right: 2px solid #dee1e7;
+}
+.info-group div p{
+  font-size: 14px;
+  font-weight: 600;
+  color:#586f9b;
+  margin-bottom: 10px;
+}
+.info-group div span{
+  font-size: 18px;
+  font-weight: 400;
+  color:#3e4e70;
+}
+.schedule-container{
+  margin:20px 0;
+}
+.info img{
+  width: 25px;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+.course-day{
+  padding: 8px 10px;
+  background: #e7fbff;
+  color: #147b93 !important;
+  margin-right: 10px;
+  font-weight: bold !important;
+  border-radius: 8px;
+}
+.details-table{
+  padding: 10px 16px;
+}
+.students-details-table{
+  padding: 10px 16px;
+  margin-top: 20px ;
+
+}
+
+.back-btn{
+  color:#147b93;
+  background: #ddedf1;
+  margin-top: 25px;
+}
+.back-btn img{
+width: 25px;
+vertical-align: middle;
+}
+.back-btn:hover{
+  background: #cde1e6;
+  
+}
