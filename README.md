@@ -25,7 +25,7 @@ Technologies
 - Payments Management
 - Dashboard
 - Authentication and Authorization
-- 
+  
  Database
   The project includes a "database.sql" file containing the database structure.
 
@@ -47,4 +47,5 @@ Installation
 7. Open the project in your browser.
    
  Note
+ 
 This project is continuously being developed and improved. New features and UI enhancements will be added as development progresses.
