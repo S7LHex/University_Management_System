@@ -14,7 +14,7 @@ class AttendanceSession{
       return $exists['id'];
     }
     
-    $sql="insert into attendance_sessions (course_id,teacher_id,session_date)values(?,?,?)";
+    $sql="insert into attendance_sessions(course_id,teacher_id,session_date) values (?,?,?)";
     $stmt=$this->pdo->prepare($sql);
     $stmt->execute([$course_id,$teacher_id,$session_date]);
     return $this->pdo->lastInsertId();
@@ -34,9 +34,9 @@ class AttendanceSession{
     return $row;
   }
   public function getSessionsByCourse($course_id){ 
-    $sql="select s.*,
+    $sql="select s.*,DAYNAME(session_date) as session_day,
     (select count(*) from attendance_records r where r.session_id=s.id and r.status='present') as present_count,
-    (select count(*) from attendance_records r where r.session_id =s.id) as total_count
+    (select count(*) from attendance_records r where r.session_id =s.id) as students_count
     from attendance_sessions s
     where s.course_id=? order by s.session_date desc";
     $stmt=$this->pdo->prepare($sql);

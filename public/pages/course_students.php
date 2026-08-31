@@ -25,8 +25,10 @@ $teacher_id=$_GET['teacher_id'];
 
 $course=$courseRepo->getCourseBYId($course_id);
 
-// $teacherCourse=$teacherRepo->getTeacherCourse($teacher_id,$course_id);
+$teacherCourse=$teacherRepo->getTeacherCourse($teacher_id,$course_id);
+
 $students=$teacherRepo->getCourseStudentsForTeacher($course_id,$teacher_id);
+
 // print_r($course);
 // print_r($teacherCourse);
 
@@ -53,7 +55,7 @@ if($teacher_id!==$_SESSION['related_id']){
 
   <div class="info-card">
 
-      <div class="info-card-body">
+      <div class="course-card">
         <img src="../assets/imgs/copy-course-svgrepo-com.svg" alt="">
         <div>
           <h2><?= htmlspecialchars($course['name'])?></h2>
@@ -61,15 +63,15 @@ if($teacher_id!==$_SESSION['related_id']){
         </div>
       </div>
 
-      <div class="info-card-body">
+      <div class="course-card">
         <img src="../assets/imgs/users-svgrepo-com (1).svg" alt="">
         <div>
-          <h2>Max Students</h2>
-          <p><?= htmlspecialchars($course['max_students']) ?></p>
-        </div>
+          <h2>Students</h2>
+          <p><?= htmlspecialchars($teacherCourse['students_count'] .' / '. $course['max_students']) ?></p>
+          </div>
       </div>
 
-      <div class="info-card-body">
+      <div class="course-card">
         <img src="../assets/imgs/history-svgrepo-com.svg" alt="">
         <div>
           <h2>Schedule</h2>
@@ -78,7 +80,7 @@ if($teacher_id!==$_SESSION['related_id']){
         </div>
       </div>
 
-      <div class="info-card-body">
+      <div class="course-card">
         <img src="../assets/imgs/date-range-svgrepo-com (2).svg" alt="">
         <div>
           <h2>Duration</h2>
@@ -108,7 +110,8 @@ if($teacher_id!==$_SESSION['related_id']){
   </tr>
   <tbody>
     <?php foreach($students as $student):?>
-      <?php $grade=$gradeRepo->getGrade($student['id'],$course_id); 
+      <?php 
+      $grade=$gradeRepo->getGrade($student['id'],$course_id); 
       $class= $grade>=60 ? 'passed':'failed';
       ?>
       <tr>
@@ -120,9 +123,10 @@ if($teacher_id!==$_SESSION['related_id']){
             <?= $grade?'Edit Grade':'Add Grade' ?>
           </a>
           <?php if($grade):?>
-          <form action="" method="POST">
+          <form action="../actions/grade_handler.php" method="POST">
             <input type="hidden" name="student_id" value="<?= $student['id'] ?>">
             <input type="hidden" name="course_id" value="<?= $course['id'] ?>">
+            <input type="hidden" name="teacher_id" value="<?= $teacher_id ?>">
             <button name="delete_grade" class="delete-btn" onclick="return confirm('Delete grade?')">Delete Grade</button>
           </form>
           <?php endif; ?>

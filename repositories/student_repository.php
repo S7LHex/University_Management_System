@@ -60,14 +60,19 @@ class StudentRepository{
   }
   
   public function getStudentCourses($studentId){
-    $sql="select c.id,c.name as course_name
-    ,c.code,t.name as teacher_name ,e.enrollment_date,
+    $sql="select 
+    c.id,c.name as course_name,
+    c.code,
+    group_concat(distinct concat(t.first_name,' ',t.last_name) separator ' , ') as teachers,
+    e.enrollment_date,
     g.grade
     from enrollments e
     join courses c on e.course_id=c.id
-    left join teachers t on t.id=c.teacher_id
+    left join course_teachers ct on c.id=ct.course_id
+    left join teachers t on t.id=ct.teacher_id
     left join grades g on g.course_id=e.course_id and g.student_id=e.student_id
-    where e.student_id=?";
+    where e.student_id=?
+    group by c.id , c.name ,c.code,e.enrollment_date,g.grade";
     $stmt=$this->pdo->prepare($sql);
     $stmt->execute([$studentId]);
     return $stmt->fetchAll(PDO::FETCH_ASSOC);

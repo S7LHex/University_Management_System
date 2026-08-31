@@ -1,5 +1,8 @@
 <?php
 
+require_once __DIR__."/../../helpers/auth.php";
+requireRole(['admin','teacher']);
+
 require_once __DIR__."/../../config/db.php";
 require_once __DIR__."/../../repositories/teacher_attendance.php"; 
 require_once __DIR__."/../../repositories/notification.php"; 
@@ -14,7 +17,6 @@ $notificationModel= new Notification($conn);
 $teacherRepo= new TeacherRepository($conn);
 $courseRepo= new CourseRepository($conn);
 
-$checkinMessage='';
 
 
 if($_SERVER['REQUEST_METHOD']==='POST'){
@@ -24,7 +26,7 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
     $userId=$_POST['user_id'];
 
     $newId=$attendanceModel->checkIn($teacherId,$courseId,$userId);
-    echo $newId;
+
 
     // Notification
     if($newId>0){
@@ -35,12 +37,14 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
     " class at ". date("H:i");
 
     $notificationModel->notifyAllAdmins($message,'teacher_checkin',$newId);
-    $checkinMessage="Your attendance has been successfully recorded.";
+    $_SESSION['success']="Your attendance has been successfully recorded.";
+    header('Location:../pages/checkin_widget.php');
+    exit;
     }else{
-      $checkinMessage="You have already checked in today.";
+      $_SESSION['error']="You have already checked in today.";
+      header('Location:../pages/checkin_widget.php');
+      exit;
     }
-
-
   }
 }
 

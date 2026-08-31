@@ -70,7 +70,7 @@ $recentEnrollments=$dashboardRepo->getRecentEnrollments();
   <a href="layout.php?page=add_teacher" class="teacher-link"><img src="../assets/imgs/add-svgrepo-com.svg" alt="">Add Teacher</a>
   <a href="layout.php?page=create_course" class="course-link"><img src="../assets/imgs/add-svgrepo-com.svg" alt="">Add Course</a>
   <a href="layout.php?page=enrollment" class="enroll-link"><img src="../assets/imgs/add-svgrepo-com.svg" alt="">Enroll Student</a>
-  <a href="register.php" class="user-link"><img src="../assets/imgs/add-svgrepo-com.svg" alt="">Register User</a>
+  <a href="layout.php?page=add_user" class="user-link"><img src="../assets/imgs/add-svgrepo-com.svg" alt="">Add User</a>
 </div>
 
 </div>

@@ -85,7 +85,7 @@ $courseStates= $course_id ? $attendanceModel->getCourseState($course_id,$paginat
       <tbody>
         <?php if(empty($courseStates)): ?>
           <tr>
-            <td colspan="7"><?= $course_id ? "No attendance data available for this course yet." : "Select course to view the report."  ?></td>
+            <td colspan="8"><?= $course_id ? "No attendance data available for this course yet." : "Select course to view the report."  ?></td>
           </tr>
         <?php else: ?>
         <?php foreach($courseStates as $state):

@@ -32,8 +32,9 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
   if(isset($_POST['delete_grade'])){
     $student_id=$_POST['student_id'];
     $course_id=$_POST['course_id'];
+    $teacher_id=$_POST['teacher_id'];
     $gradeRepo->deleteGrade($student_id,$course_id);
-    header('Location:../pages/course_students.php?course_id='.$course_id);
+    header('Location:../pages/course_students.php?course_id='.$course_id.'&teacher_id='.$teacher_id);
     exit;
   }
 }

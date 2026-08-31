@@ -41,6 +41,8 @@ $enrolledStudents=$enrollRepo->getCourseStudents($course_id);
 $countEnrolledStudents=$enrollRepo->CountCourseStudent($course_id);
 $countCourseTeachers=$courseRepo->countCourseTeachers($course_id);
 
+
+
 // DURATION
 $start_date= new DateTime($course['start_date']);
 $end_date= new DateTime($course['end_date']);
@@ -136,10 +138,7 @@ else{
       <span><?= htmlspecialchars($course['max_students']) ?></span>
     </div>
 
-    <div>
-      <p>Current Enrollments</p>
-      <span>???</span>
-    </div>
+    
   </div>
 </div>
 

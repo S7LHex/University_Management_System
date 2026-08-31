@@ -60,12 +60,14 @@ class TeacherRepository{
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
   }
   public function getTeacherCourse($teacherId,$courseId){
-    $sql= "select c.* 
+    $sql="select ct.course_id,c.id,c.name as course_name ,count(e.student_id)as students_count
     from course_teachers ct
-    join courses c on c.id=ct.course_id
+    left join courses c on c.id=ct.course_id
+    left join enrollments e on e.course_id=c.id
     where ct.teacher_id=? and ct.course_id=?
-    ";
+    group by c.id,c.name";
     $stmt=$this->pdo->prepare($sql);
+    $stmt->execute([$teacherId,$courseId]);
     return $stmt->fetch(PDO::FETCH_ASSOC);
   }
 

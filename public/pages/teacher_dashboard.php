@@ -23,9 +23,7 @@ if(!$user){
 $teacherId=$_SESSION['related_id'];
 $teacher=$teacherRepo->findTeacherById($teacherId);
 $teacherCourses=$teacherRepo->getTeacherCourses($teacherId);
-// print_r($teacher);
-// print_r($_SESSION);
-// print_r($_SESSION);
+
 
 ?>
 <!DOCTYPE html>
